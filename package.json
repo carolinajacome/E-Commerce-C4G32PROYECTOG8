@@ -1,0 +1,24 @@
+{
+  "name": "e-commerce-ciclo4",
+  "version": "1.0.0",
+  "description": "E-commerce for JFOUR JEANS ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
+    "prod": "SET NODE_ENV= PRODUCTION& nodemon backend/server",
+    "seeder": "node backend/utils/seeder.js"
+     
+
+  },
+  "author": "Equipo 8-Grupo 32 Misión Tic",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
