@@ -23,4 +23,4 @@ const connectDatabaseMongo = async () => {
 };
 
 
-module.exports = connectDatabase;
+module.exports = connectDatabaseMongo;

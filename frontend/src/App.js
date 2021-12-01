@@ -8,7 +8,19 @@ import Footer from "./components/layout/Footer";
 import Home from './components/Home';
 import ProductDetails from './components/product/ProductDetails';
 
+// Admin Imports
+import Dashboard from './components/admin/Dashboard'
+import ProductsList from "./components/admin/ProductsList";
+import NewProduct from "./components/admin/NewProduct";
+import UpdateProduct from "./components/admin/UpdateProduct";
+
+import {useSelector} from 'react-redux'
+
 function App() {
+
+
+  const {user, loading} = useSelector(state => state.auth) 
+  
   return (
     <Router>
       <div className="App">
@@ -17,7 +29,14 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/product/:id" component={ProductDetails} exact />
         </div>
-        <Footer />
+        <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
+        <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
+        <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
+        <ProtectedRoute path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
+
+        {!loading && user.role !== 'admin' && (
+          <Footer />
+        )}
       </div>
     </Router>
   );
