@@ -13,6 +13,8 @@ import Dashboard from './components/admin/Dashboard'
 import ProductsList from "./components/admin/ProductsList";
 import NewProduct from "./components/admin/NewProduct";
 import UpdateProduct from "./components/admin/UpdateProduct";
+import OrdersList from "./components/admin/OrdersList";
+
 
 import {useSelector} from 'react-redux'
 
@@ -33,6 +35,8 @@ function App() {
         <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
         <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
         <ProtectedRoute path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
+
+        <ProtectedRoute path="/admin/orders" isAdmin={true} component={OrdersList} exact />
 
         {!loading && user.role !== 'admin' && (
           <Footer />
