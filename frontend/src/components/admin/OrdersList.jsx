@@ -17,6 +17,7 @@ const OrdersList = ({ history }) => {
     const dispatch = useDispatch();
 
     const { loading, error, orders } = useSelector(state => state.allOrders);
+    
     const { isDeleted } = useSelector(state => state.order)
 
     useEffect(() => {
