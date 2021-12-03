@@ -1,2 +1,2 @@
-# E-Commerce-C4G32PROYECTOG8
-MERN Stack Project / Fashion E-Commerce website
+# jfourjeans
+MERN Stack Full Ecommerce Site - Using React, Redux, Node, Express, MongoDB and JWT
