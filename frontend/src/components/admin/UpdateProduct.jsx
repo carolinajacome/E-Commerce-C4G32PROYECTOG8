@@ -10,7 +10,7 @@ import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants"
 
 
 
-const UpdateProduct = ({match, history}) => {
+const UpdateProduct = ({ match, history }) => {
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
@@ -37,11 +37,11 @@ const UpdateProduct = ({match, history}) => {
         'Home'
     ]
 
-    
+
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const {error, product} = useSelector(state.productDetails)
+    const { error, product } = useSelector(state.productDetails)
     const { loading, error: updateError, isUpdated } = useSelector(state => state.product);
 
     const productId = match.params.id;
@@ -50,7 +50,7 @@ const UpdateProduct = ({match, history}) => {
 
         if (product && product._id !== productId) {
             dispatch(getProductDetails(productId));
-        }else{
+        } else {
             setName(product.name);
             setPrice(product.price);
             setDescription(product.description);

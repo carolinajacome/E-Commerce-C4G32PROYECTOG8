@@ -15,15 +15,17 @@ import NewProduct from "./components/admin/NewProduct";
 import UpdateProduct from "./components/admin/UpdateProduct";
 import OrdersList from "./components/admin/OrdersList";
 import ProccessOrder from './components/admin/ProccessOrder';
+import UsersList from "./components/admin/UsersList";
+import UpdateUser from "./components/admin/UpdateUser";
+import ProductReviews from "./components/admin/ProductReviews";
 
-
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function App() {
 
 
-  const {user, loading} = useSelector(state => state.auth) 
-  
+  const { user, loading } = useSelector(state => state.auth)
+
   return (
     <Router>
       <div className="App">
@@ -40,6 +42,12 @@ function App() {
         <ProtectedRoute path="/admin/orders" isAdmin={true} component={OrdersList} exact />
 
         <ProtectedRoute path="/admin/order/:id" isAdmin={true} component={ProccessOrder} exact />
+
+        <ProtectedRoute path="/admin/users" isAdmin={true} component={UsersList} exact />
+
+        <ProtectedRoute path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
+
+        <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
 
         {!loading && user.role !== 'admin' && (
           <Footer />
