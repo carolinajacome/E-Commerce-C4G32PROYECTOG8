@@ -8,6 +8,8 @@ import Footer from "./components/layout/Footer";
 import Home from './components/Home';
 import ProductDetails from './components/product/ProductDetails';
 
+import Cart from './components/cart/Cart'
+
 function App() {
   return (
     <Router>
@@ -16,6 +18,8 @@ function App() {
         <div className="container container-fluid my-5">
           <Route path="/" component={Home} exact />
           <Route path="/product/:id" component={ProductDetails} exact />
+
+          <Route path="cart" component={Cart} exact />
         </div>
         <Footer />
       </div>
