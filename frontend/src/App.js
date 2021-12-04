@@ -7,7 +7,7 @@ import Footer from "./components/layout/Footer";
 
 import Home from './components/Home';
 import ProductDetails from './components/product/ProductDetails';
-
+/* 
 //Cart Imports
 import Cart from './components/cart/Cart'
 import Shipping from './components/cart/Shipping'
@@ -28,6 +28,7 @@ import UpdatePassword from './components/user/UpdatePassword'
 import ForgotPassword from './components/user/ForgotPassword'
 import NewPassword from './components/user/NewPassword'
 
+ */
 
 // Admin Imports
 import Dashboard from './components/admin/Dashboard'
@@ -42,15 +43,16 @@ import ProductReviews from "./components/admin/ProductReviews";
 
 import ProtectedRoute from './components/route/ProtectedRoute'
 import { loadUser } from './actions/userActions'
+import { useSelector } from 'react-redux'
 import store from './store'
 import axios from 'axios'
 
-import { useSelector } from 'react-redux'
+
 
 function App() {
 
 
-  const { user, loading } = useSelector(state => state.auth)
+  const { user, isAuthenticated, loading } = useSelector(state => state.auth)
 
   return (
     <Router>
@@ -81,7 +83,7 @@ function App() {
 
         <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
 
-        {!loading && user.role !== 'admin' && (
+        {!loading && (!isAuthenticated || user.role !== 'admin') && (
           <Footer />
         )}
       </div>

@@ -20,7 +20,7 @@ const ProccessOrder = ({ match }) => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, order ={} } = useSelector(state.orderDetails);
+    const { loading, order ={} } = useSelector(state => state.orderDetails);
     const {
         shippingInfo,
         orderItems,
@@ -49,8 +49,7 @@ const ProccessOrder = ({ match }) => {
     }, [dispatch, alert, error, isUpdated, orderId]);
 
     const updateOrderHandler = (id) => {
-        e.preventDefault();
-
+        
         const formData = new FormData();
         formData.set("status", status);
 
