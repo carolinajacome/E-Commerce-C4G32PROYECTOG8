@@ -15,6 +15,11 @@ import ConfirmOrder from './components/cart/ConfirmOrder'
 import Payment from './components/cart/Payment'
 import OrderSuccess from './components/cart/OrderSuccess'
 
+
+//Payment
+import {Elements }from '@stripe/react-stripe-js'
+import {loadStripe }from '@stripe/react-stripe-js'
+
 function App() {
   return (
     <Router>
@@ -30,6 +35,13 @@ function App() {
           <ProtectedRoute path="/confirm" component={ConfirmOrder} exact />
           <ProtectedRoute path="/success" component={OrderSuccess} />
 
+        {stripeApiKey &&
+        <Elements stripe={loadStripe(stripeApiKey)} >
+            <ProtectedRoute path="/payment" component={Payment}/>
+
+
+          </Elements>
+}
         </div>
         <Footer />
       </div>
