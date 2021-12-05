@@ -34,21 +34,19 @@ const productSchema = new mongoose.Schema({
         }
     ],
     category: {
-        name: {
-            type: String,
-            required: [true, 'Category is required'],
-            enum: {
-                values: ['Man', 'Woman'],
-                message: 'Please select correct category for product'
-            }
-        },
-        subcategory: {
-            type: String,
-            required: [true, 'Subcategory is required'],
-            enum: {
-                values: ['Tshirt', 'Jeans', 'Shoes'],
-                message: 'Please select correct subcategory for product'
-            }
+        type: String,
+        required: [true, 'Category is required'],
+        enum: {
+            values: ['Man', 'Woman'],
+            message: 'Please select correct category for product'
+        }
+    },
+    subcategory: {
+        type: String,
+        required: [true, 'Subcategory is required'],
+        enum: {
+            values: ['Tshirt', 'Jeans', 'Shoes'],
+            message: 'Please select correct subcategory for product'
         }
     },
     seller: {

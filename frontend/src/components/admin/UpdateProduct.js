@@ -14,6 +14,7 @@ const UpdateProduct = ({ match, history }) => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
+    const [subcategory, setSubcategory] = useState('');
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
@@ -22,18 +23,14 @@ const UpdateProduct = ({ match, history }) => {
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
-        'Electronics',
-        'Cameras',
-        'Laptops',
-        'Accessories',
-        'Headphones',
-        'Food',
-        "Books",
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
+        'Man',
+        'Woman',
+    ]
+
+    const subcategories = [
+        'Tshirt',
+        'Jeans',
+        'Shoes'
     ]
 
     const alert = useAlert();
@@ -53,6 +50,7 @@ const UpdateProduct = ({ match, history }) => {
             setPrice(product.price);
             setDescription(product.description);
             setCategory(product.category);
+            setSubcategory(product.subcategory);
             setSeller(product.seller);
             setStock(product.stock)
             setOldImages(product.images)
@@ -86,6 +84,7 @@ const UpdateProduct = ({ match, history }) => {
         formData.set('price', price);
         formData.set('description', description);
         formData.set('category', category);
+        formData.set('subcategory', subcategory);
         formData.set('stock', stock);
         formData.set('seller', seller);
 
@@ -169,6 +168,17 @@ const UpdateProduct = ({ match, history }) => {
 
                                     </select>
                                 </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="subcategory_field">SubCategory</label>
+                                    <select className="form-control" id="subcategory_field" value={subcategory} onChange={(e) => setSubcategory(e.target.value)}>
+                                        {subcategories.map(subcategory => (
+                                            <option key={subcategory} value={subcategory} >{subcategory}</option>
+                                        ))}
+
+                                    </select>
+                                </div>
+                                
                                 <div className="form-group">
                                     <label htmlFor="stock_field">Stock</label>
                                     <input

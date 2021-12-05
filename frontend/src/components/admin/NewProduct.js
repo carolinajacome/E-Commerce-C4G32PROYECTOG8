@@ -14,7 +14,7 @@ const NewProduct = ({ history }) => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
-    const [subcategory, setSubCategory] = useState('');
+    const [subcategory, setSubcategory] = useState('');
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
@@ -147,8 +147,13 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
+<<<<<<< HEAD
                                     <label htmlFor="category_field">Subcategoría</label>
                                     <select className="form-control" id="subcategory_field" value={subcategory} onChange={(e) => setSubCategory(e.target.value)}>
+=======
+                                    <label htmlFor="subcategory_field">SubCategory</label>
+                                    <select className="form-control" id="subcategory_field" value={subcategory} onChange={(e) => setSubcategory(e.target.value)}>
+>>>>>>> eb2eec9884b22eb2914af4b4374b9f6098cd3e51
                                         {subcategories.map(subcategory => (
                                             <option key={subcategory} value={subcategory} >{subcategory}</option>
                                         ))}
@@ -191,8 +196,13 @@ const NewProduct = ({ history }) => {
                                             multiple
                                         />
                                         <label className='custom-file-label' htmlFor='customFile'>
+<<<<<<< HEAD
                                             Elige imágenes...
                                      </label>
+=======
+                                            Choose Images
+                                        </label>
+>>>>>>> eb2eec9884b22eb2914af4b4374b9f6098cd3e51
                                     </div>
 
                                     {imagesPreview.map(img => (
