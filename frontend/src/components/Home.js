@@ -94,7 +94,7 @@ const Home = ({ match }) => {
 
                                             <div className="mt-5">
                                                 <h4 className="mb-3">
-                                                    Categories
+                                                    Categorías
                                                 </h4>
 
                                                 <ul className="pl-0">
@@ -117,7 +117,7 @@ const Home = ({ match }) => {
 
                                             <div className="mt-5">
                                                 <h4 className="mb-3">
-                                                    SubCategories
+                                                    Subcategorías
                                                 </h4>
 
                                                 <ul className="pl-0">

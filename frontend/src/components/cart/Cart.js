@@ -43,7 +43,7 @@ const Cart = ({ history }) => {
             <MetaData title={'Your Cart'} />
             {cartItems.length === 0 ? <h2 className="mt-5">Tu carrito está vacío</h2> : (
                 <Fragment>
-                    <h2 className="mt-5">Your Cart: <b>{cartItems.length} items</b></h2>
+                    <h2 className="mt-5">Tú carrito: <b>{cartItems.length} items</b></h2>
 
                     <div className="row d-flex justify-content-between">
                         <div className="col-12 col-lg-8">
@@ -93,11 +93,11 @@ const Cart = ({ history }) => {
                             <div id="order_summary">
                                 <h4>Resumen de la orden</h4>
                                 <hr />
-                                <p>Subtotal:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Units)</span></p>
+                                <p>Subtotal:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Unidades)</span></p>
                                 <p>Est. total: <span className="order-summary-values">${cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span></p>
 
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Check out</button>
+                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Pagar</button>
                             </div>
                         </div>
                     </div>

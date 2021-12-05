@@ -135,14 +135,14 @@ const ProductDetails = ({ match }) => {
 
                         <div className="col-12 col-lg-5 mt-5">
                             <h3>{product.name}</h3>
-                            <p id="product_id">Product # {product._id}</p>
+                            <p id="product_id">Producto # {product._id}</p>
 
                             <hr />
 
                             <div className="rating-outer">
                                 <div className="rating-inner" style={{ width: `${(product.ratings / 5) * 100}%` }}></div>
                             </div>
-                            <span id="no_of_reviews">({product.numOfReviews} Reviews)</span>
+                            <span id="no_of_reviews">({product.numOfReviews} Reseñas)</span>
 
                             <hr />
 
@@ -154,24 +154,24 @@ const ProductDetails = ({ match }) => {
 
                                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                             </div>
-                            <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0} onClick={addToCart}>Add to Cart</button>
+                            <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0} onClick={addToCart}>Agregar al carrito</button>
 
                             <hr />
 
-                            <p>Status: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'In Stock' : 'Out of Stock'}</span></p>
+                            <p>Estado: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'In Stock' : 'Out of Stock'}</span></p>
 
                             <hr />
 
-                            <h4 className="mt-2">Description:</h4>
+                            <h4 className="mt-2">Descripción:</h4>
                             <p>{product.description}</p>
                             <hr />
-                            <p id="product_seller mb-3">Sold by: <strong>{product.seller}</strong></p>
+                            <p id="product_seller mb-3">Vendido por: <strong>{product.seller}</strong></p>
 
                             {user ? <button id="review_btn" type="button" className="btn btn-primary mt-4" data-toggle="modal" data-target="#ratingModal" onClick={setUserRatings}>
-                                Submit Your Review
+                                Enviar tu reseña
                             </button>
                                 :
-                                <div className="alert alert-danger mt-5" type='alert'>Login to post your review.</div>
+                                <div className="alert alert-danger mt-5" type='alert'>Inicia sesión para publicar tu reseña.</div>
                             }
 
 
@@ -182,7 +182,7 @@ const ProductDetails = ({ match }) => {
                                         <div className="modal-dialog" role="document">
                                             <div className="modal-content">
                                                 <div className="modal-header">
-                                                    <h5 className="modal-title" id="ratingModalLabel">Submit Review</h5>
+                                                    <h5 className="modal-title" id="ratingModalLabel">Enviar reseña/opinión</h5>
                                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -206,7 +206,7 @@ const ProductDetails = ({ match }) => {
 
                                                     </textarea>
 
-                                                    <button className="btn my-3 float-right review-btn px-4 text-white" onClick={reviewHandler} data-dismiss="modal" aria-label="Close">Submit</button>
+                                                    <button className="btn my-3 float-right review-btn px-4 text-white" onClick={reviewHandler} data-dismiss="modal" aria-label="Close">Enviar</button>
                                                 </div>
                                             </div>
                                         </div>
