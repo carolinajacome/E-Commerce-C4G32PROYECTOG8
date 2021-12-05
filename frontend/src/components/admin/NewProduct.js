@@ -14,7 +14,7 @@ const NewProduct = ({ history }) => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
-    const [subcategory, setSubCategory] = useState('');
+    const [subcategory, setSubcategory] = useState('');
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
@@ -144,8 +144,8 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="category_field">SubCategory</label>
-                                    <select className="form-control" id="subcategory_field" value={subcategory} onChange={(e) => setSubCategory(e.target.value)}>
+                                    <label htmlFor="subcategory_field">SubCategory</label>
+                                    <select className="form-control" id="subcategory_field" value={subcategory} onChange={(e) => setSubcategory(e.target.value)}>
                                         {subcategories.map(subcategory => (
                                             <option key={subcategory} value={subcategory} >{subcategory}</option>
                                         ))}
@@ -189,7 +189,7 @@ const NewProduct = ({ history }) => {
                                         />
                                         <label className='custom-file-label' htmlFor='customFile'>
                                             Choose Images
-                                     </label>
+                                        </label>
                                     </div>
 
                                     {imagesPreview.map(img => (

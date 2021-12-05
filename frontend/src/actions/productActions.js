@@ -40,11 +40,11 @@ export const getProducts = (keyword = '', currentPage = 1, price, category, subc
         let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}`
 
         if (category) {
-            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category.name=${category}&ratings[gte]=${rating}`
+            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category=${category}&ratings[gte]=${rating}`
         }else if (subcategory) {
-            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category.subcategory=${subcategory}&ratings[gte]=${rating}`
+            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&subcategory=${subcategory}&ratings[gte]=${rating}`
         }else if ( category && subcategory) {
-            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category.name=${category}&category.subcategory=${subcategory}&ratings[gte]=${rating}`
+            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category=${category}&subcategory=${subcategory}&ratings[gte]=${rating}`
         }
 
         const { data } = await axios.get(link)
