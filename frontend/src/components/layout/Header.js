@@ -7,6 +7,8 @@ import { logout } from '../../actions/userActions'
 
 import Search from './Search'
 
+import j4jeans from '../../assets/logo.png'
+
 import '../../App.css'
 
 const Header = () => {
@@ -18,7 +20,7 @@ const Header = () => {
 
     const logoutHandler = () => {
         dispatch(logout());
-        alert.success('Logged out successfully.')
+        alert.success('Has cerrado sesión')
     }
 
     return (
@@ -27,7 +29,7 @@ const Header = () => {
                 <div className="col-12 col-md-3">
                     <div className="navbar-brand">
                         <Link to="/">
-                            <img src="/images/logo.png" className="logo" alt="logo" />
+                            <img src={j4jeans} height="50px" width="100%"  alt="logo" />
                         </Link>
                     </div>
                 </div>
@@ -38,7 +40,7 @@ const Header = () => {
 
                 <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                     <Link to="/cart" style={{ textDecoration: 'none' }} >
-                        <span id="cart" className="ml-3">Cart</span>
+                        <span id="cart" className="ml-3">Carrito</span>
                         <span className="ml-1" id="cart_count">{cartItems.length}</span>
                     </Link>
 
@@ -61,10 +63,10 @@ const Header = () => {
                                 {user && user.role === 'admin' && (
                                     <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
                                 )}
-                                <Link className="dropdown-item" to="/orders/me">Orders</Link>
-                                <Link className="dropdown-item" to="/me">Profile</Link>
+                                <Link className="dropdown-item" to="/orders/me">Ordenes</Link>
+                                <Link className="dropdown-item" to="/me">Perfil</Link>
                                 <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
-                                    Logout
+                                    Cerrar sesión
                                 </Link>
 
                             </div>
@@ -72,7 +74,7 @@ const Header = () => {
 
                         </div>
 
-                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>}
+                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Iniciar sesión</Link>}
 
 
                 </div>

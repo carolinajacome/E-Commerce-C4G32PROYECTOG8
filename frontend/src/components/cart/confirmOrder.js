@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import MetaData from '../layout/MetaData'
-import CheckoutSteps from './CheckoutSteps'
+import CheckOutSteps from './CheckOutSteps'
 
 import { useSelector } from 'react-redux'
 
@@ -34,7 +34,7 @@ const ConfirmOrder = ({ history }) => {
 
             <MetaData title={'Confirm Order'} />
 
-            <CheckoutSteps shipping confirmOrder />
+            <CheckOutSteps shipping confirmOrder />
 
             <div className="row d-flex justify-content-between">
                 <div className="col-12 col-lg-8 mt-5 order-confirm">

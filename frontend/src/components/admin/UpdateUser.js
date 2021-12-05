@@ -39,7 +39,7 @@ const UpdateUser = ({ history, match }) => {
         }
 
         if (isUpdated) {
-            alert.success('User updated successfully')
+            alert.success('Usuario actualizado satisfactoriamente')
 
             history.push('/admin/users')
 
@@ -74,10 +74,10 @@ const UpdateUser = ({ history, match }) => {
                     <div className="row wrapper">
                         <div className="col-10 col-lg-5">
                             <form className="shadow-lg" onSubmit={submitHandler}>
-                                <h1 className="mt-2 mb-5">Update User</h1>
+                                <h1 className="mt-2 mb-5">Actualizar Usuario</h1>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Name</label>
+                                    <label htmlFor="name_field">Nombre</label>
                                     <input
                                         type="name"
                                         id="name_field"
@@ -101,7 +101,7 @@ const UpdateUser = ({ history, match }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="role_field">Role</label>
+                                    <label htmlFor="role_field">Rol</label>
 
                                     <select
                                         id="role_field"
@@ -110,12 +110,12 @@ const UpdateUser = ({ history, match }) => {
                                         value={role}
                                         onChange={(e) => setRole(e.target.value)}
                                     >
-                                        <option value="user">user</option>
-                                        <option value="admin">admin</option>
+                                        <option value="user">usuario</option>
+                                        <option value="admin">administrador</option>
                                     </select>
                                 </div>
 
-                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Update</button>
+                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Actualizar</button>
                             </form>
                         </div>
                     </div>

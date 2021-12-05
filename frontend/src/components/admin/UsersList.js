@@ -28,7 +28,7 @@ const UsersList = ({ history }) => {
         }
 
         if (isDeleted) {
-            alert.success('User deleted successfully');
+            alert.success('Usuario eliminado satisfactoriamente');
             history.push('/admin/users');
             dispatch({ type: DELETE_USER_RESET })
         }
@@ -43,12 +43,12 @@ const UsersList = ({ history }) => {
         const data = {
             columns: [
                 {
-                    label: 'User ID',
+                    label: 'ID usuario',
                     field: 'id',
                     sort: 'asc'
                 },
                 {
-                    label: 'Name',
+                    label: 'Nombre',
                     field: 'name',
                     sort: 'asc'
                 },
@@ -58,12 +58,12 @@ const UsersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Role',
+                    label: 'Rol',
                     field: 'role',
                     sort: 'asc'
                 },
                 {
-                    label: 'Actions',
+                    label: 'Acciones',
                     field: 'actions',
                 },
             ],
@@ -102,7 +102,7 @@ const UsersList = ({ history }) => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">All Users</h1>
+                        <h1 className="my-5">Todos los Usuarios</h1>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable

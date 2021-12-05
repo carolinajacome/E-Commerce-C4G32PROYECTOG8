@@ -41,7 +41,7 @@ const Cart = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Your Cart'} />
-            {cartItems.length === 0 ? <h2 className="mt-5">Your Cart is Empty</h2> : (
+            {cartItems.length === 0 ? <h2 className="mt-5">Tu carrito está vacío</h2> : (
                 <Fragment>
                     <h2 className="mt-5">Your Cart: <b>{cartItems.length} items</b></h2>
 
@@ -91,7 +91,7 @@ const Cart = ({ history }) => {
 
                         <div className="col-12 col-lg-3 my-4">
                             <div id="order_summary">
-                                <h4>Order Summary</h4>
+                                <h4>Resumen de la orden</h4>
                                 <hr />
                                 <p>Subtotal:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Units)</span></p>
                                 <p>Est. total: <span className="order-summary-values">${cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span></p>

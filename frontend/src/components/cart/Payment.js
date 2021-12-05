@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
-import CheckoutSteps from './CheckoutSteps'
+import CheckOutSteps from './CheckOutSteps'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -125,7 +125,7 @@ const Payment = ({ history }) => {
         <Fragment>
             <MetaData title={'Payment'} />
 
-            <CheckoutSteps shipping confirmOrder payment />
+            <CheckOutSteps shipping confirmOrder payment />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">

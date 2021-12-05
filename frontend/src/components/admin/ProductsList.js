@@ -33,7 +33,7 @@ const ProductsList = ({ history }) => {
         }
 
         if (isDeleted) {
-            alert.success('Product deleted successfully');
+            alert.success('Producto eliminado satisfactoriamente');
             history.push('/admin/products');
             dispatch({ type: DELETE_PRODUCT_RESET })
         }
@@ -49,12 +49,12 @@ const ProductsList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Name',
+                    label: 'Nombre',
                     field: 'name',
                     sort: 'asc'
                 },
                 {
-                    label: 'Price',
+                    label: 'Precio',
                     field: 'price',
                     sort: 'asc'
                 },
@@ -64,7 +64,7 @@ const ProductsList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Actions',
+                    label: 'Acciones',
                     field: 'actions',
                 },
             ],
@@ -105,7 +105,7 @@ const ProductsList = ({ history }) => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">All Products</h1>
+                        <h1 className="my-5">Todos los Productos</h1>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable

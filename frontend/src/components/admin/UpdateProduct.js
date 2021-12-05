@@ -71,7 +71,7 @@ const UpdateProduct = ({ match, history }) => {
 
         if (isUpdated) {
             history.push('/admin/products');
-            alert.success('Product updated successfully');
+            alert.success('Producto actualizado satisfactoriamente');
             dispatch({ type: UPDATE_PRODUCT_RESET })
         }
 
@@ -131,10 +131,10 @@ const UpdateProduct = ({ match, history }) => {
                     <Fragment>
                         <div className="wrapper my-5">
                             <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Update Product</h1>
+                                <h1 className="mb-4">Actualizar Producto</h1>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Name</label>
+                                    <label htmlFor="name_field">Nombre</label>
                                     <input
                                         type="text"
                                         id="name_field"
@@ -145,7 +145,7 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="price_field">Price</label>
+                                    <label htmlFor="price_field">Precio</label>
                                     <input
                                         type="text"
                                         id="price_field"
@@ -156,12 +156,12 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="description_field">Description</label>
+                                    <label htmlFor="description_field">Descripción</label>
                                     <textarea className="form-control" id="description_field" rows="8" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="category_field">Category</label>
+                                    <label htmlFor="category_field">Categoría</label>
                                     <select className="form-control" id="category_field" value={category} onChange={(e) => setCategory(e.target.value)}>
                                         {categories.map(category => (
                                             <option key={category} value={category} >{category}</option>
@@ -181,7 +181,7 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="seller_field">Seller Name</label>
+                                    <label htmlFor="seller_field">Nombre Vendedor</label>
                                     <input
                                         type="text"
                                         id="seller_field"
@@ -192,7 +192,7 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className='form-group'>
-                                    <label>Images</label>
+                                    <label>Imágenes</label>
 
                                     <div className='custom-file'>
                                         <input
@@ -204,7 +204,7 @@ const UpdateProduct = ({ match, history }) => {
                                             multiple
                                         />
                                         <label className='custom-file-label' htmlFor='customFile'>
-                                            Choose Images
+                                            Elige imágenes...
                                  </label>
                                     </div>
 
@@ -225,7 +225,7 @@ const UpdateProduct = ({ match, history }) => {
                                     className="btn btn-block py-3"
                                     disabled={loading ? true : false}
                                 >
-                                    UPDATE
+                                    ACTUALIZAR
                             </button>
 
                             </form>

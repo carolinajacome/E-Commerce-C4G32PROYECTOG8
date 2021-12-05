@@ -28,7 +28,7 @@ const OrdersList = ({ history }) => {
         }
 
         if (isDeleted) {
-            alert.success('Order deleted successfully');
+            alert.success('Orden eliminada satisfactoriamente');
             history.push('/admin/orders');
             dispatch({ type: DELETE_ORDER_RESET })
         }
@@ -43,27 +43,27 @@ const OrdersList = ({ history }) => {
         const data = {
             columns: [
                 {
-                    label: 'Order ID',
+                    label: 'Orden ID',
                     field: 'id',
                     sort: 'asc'
                 },
                 {
-                    label: 'No of Items',
+                    label: 'N° Items',
                     field: 'numofItems',
                     sort: 'asc'
                 },
                 {
-                    label: 'Amount',
+                    label: 'Cantidad',
                     field: 'amount',
                     sort: 'asc'
                 },
                 {
-                    label: 'Status',
+                    label: 'Estado',
                     field: 'status',
                     sort: 'asc'
                 },
                 {
-                    label: 'Actions',
+                    label: 'Acciones',
                     field: 'actions',
                 },
             ],
@@ -103,7 +103,7 @@ const OrdersList = ({ history }) => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">All Orders</h1>
+                        <h1 className="my-5">Todas las ordenes</h1>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable

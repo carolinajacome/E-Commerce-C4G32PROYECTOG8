@@ -36,7 +36,7 @@ const ProductReviews = () => {
         }
 
         if (isDeleted) {
-            alert.success('Review deleted successfully');
+            alert.success('Reseña eliminada satisfactoriamente');
             dispatch({ type: DELETE_REVIEW_RESET })
         }
 
@@ -57,7 +57,7 @@ const ProductReviews = () => {
         const data = {
             columns: [
                 {
-                    label: 'Review ID',
+                    label: 'ID reseña',
                     field: 'id',
                     sort: 'asc'
                 },
@@ -67,17 +67,17 @@ const ProductReviews = () => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Comment',
+                    label: 'Comentario',
                     field: 'comment',
                     sort: 'asc'
                 },
                 {
-                    label: 'User',
+                    label: 'Usuario',
                     field: 'user',
                     sort: 'asc'
                 },
                 {
-                    label: 'Actions',
+                    label: 'Acciones',
                     field: 'actions',
                 },
             ],
@@ -115,7 +115,7 @@ const ProductReviews = () => {
                             <div className="col-5">
                                 <form onSubmit={submitHandler}>
                                     <div className="form-group">
-                                        <label htmlFor="productId_field">Enter Product ID</label>
+                                        <label htmlFor="productId_field">Ingresa ID del producto</label>
                                         <input
                                             type="text"
                                             id="productId_field"
@@ -130,7 +130,7 @@ const ProductReviews = () => {
                                         type="submit"
                                         className="btn btn-primary btn-block py-2"
                                     >
-                                        SEARCH
+                                        BUSCAR
 								    </button>
                                 </form>
                             </div>
@@ -145,7 +145,7 @@ const ProductReviews = () => {
                                 hover
                             />
                         ) : (
-                                <p className="mt-5 text-center">No Reviews.</p>
+                                <p className="mt-5 text-center">No hay reseñas.</p>
                             )}
 
 
