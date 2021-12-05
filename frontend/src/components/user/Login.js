@@ -48,7 +48,7 @@ const Login = ({ history, location }) => {
                     <div className="row wrapper">
                         <div className="col-10 col-lg-5">
                             <form className="shadow-lg" onSubmit={submitHandler}>
-                                <h1 className="mb-3">Login</h1>
+                                <h1 className="mb-3 text-center">Iniciar sesión</h1>
                                 <div className="form-group">
                                     <label htmlFor="email_field">Email</label>
                                     <input
@@ -61,7 +61,7 @@ const Login = ({ history, location }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="password_field">Password</label>
+                                    <label htmlFor="password_field">Contraseña</label>
                                     <input
                                         type="password"
                                         id="password_field"
@@ -71,17 +71,17 @@ const Login = ({ history, location }) => {
                                     />
                                 </div>
 
-                                <Link to="/password/forgot" className="float-right mb-4">Forgot Password?</Link>
+                                <Link to="/password/forgot" className="float-right mb-4">Olvidaste la contraseña?</Link>
 
                                 <button
                                     id="login_button"
                                     type="submit"
                                     className="btn btn-block py-3"
                                 >
-                                    LOGIN
+                                    INGRESAR
                                 </button>
 
-                                <Link to="/register" className="float-right mt-3">New User?</Link>
+                                <Link to="/register" className="float-right mt-3">Nuevo Usuario?</Link>
                             </form>
                         </div>
                     </div>

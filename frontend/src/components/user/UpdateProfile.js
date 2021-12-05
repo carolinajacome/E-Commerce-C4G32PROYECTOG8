@@ -34,7 +34,7 @@ const UpdateProfile = ({ history }) => {
         }
 
         if (isUpdated) {
-            alert.success('User updated successfully')
+            alert.success('Usuario actualizado satisfactoriamente')
             dispatch(loadUser());
 
             history.push('/me')
@@ -78,10 +78,10 @@ const UpdateProfile = ({ history }) => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mt-2 mb-5">Update Profile</h1>
+                        <h1 className="mt-2 mb-5 text-center">Actualizar perfil</h1>
 
                         <div className="form-group">
-                            <label htmlFor="email_field">Name</label>
+                            <label htmlFor="email_field">Nombre</label>
                             <input
                                 type="name"
                                 id="name_field"
@@ -126,13 +126,13 @@ const UpdateProfile = ({ history }) => {
                                         onChange={onChange}
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
-                                        Choose Avatar
+                                        Elegir un Avatar
                                 </label>
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Update</button>
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Actualizar</button>
                     </form>
                 </div>
             </div>

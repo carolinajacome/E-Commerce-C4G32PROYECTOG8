@@ -66,7 +66,7 @@ const Header = () => {
                                 <Link className="dropdown-item" to="/orders/me">Ordenes</Link>
                                 <Link className="dropdown-item" to="/me">Perfil</Link>
                                 <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
-                                    Cerrar sesión
+                                    Logout
                                 </Link>
 
                             </div>
@@ -74,7 +74,7 @@ const Header = () => {
 
                         </div>
 
-                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Iniciar sesión</Link>}
+                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>}
 
 
                 </div>

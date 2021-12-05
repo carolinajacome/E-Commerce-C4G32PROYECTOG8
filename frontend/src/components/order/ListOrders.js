@@ -29,27 +29,27 @@ const ListOrders = () => {
         const data = {
             columns: [
                 {
-                    label: 'Order ID',
+                    label: 'ID Orden',
                     field: 'id',
                     sort: 'asc'
                 },
                 {
-                    label: 'Num of Items',
+                    label: 'N° de Items',
                     field: 'numOfItems',
                     sort: 'asc'
                 },
                 {
-                    label: 'Amount',
+                    label: 'Cantidad',
                     field: 'amount',
                     sort: 'asc'
                 },
                 {
-                    label: 'Status',
+                    label: 'Estado',
                     field: 'status',
                     sort: 'asc'
                 },
                 {
-                    label: 'Actions',
+                    label: 'Acciones',
                     field: 'actions',
                     sort: 'asc'
                 },
@@ -80,7 +80,7 @@ const ListOrders = () => {
 
             <MetaData title={'My Orders'} />
 
-            <h1 className="my-5">My Orders</h1>
+            <h1 className="my-5">Mis Ordenes</h1>
 
             {loading ? <Loader /> : (
                 <MDBDataTable

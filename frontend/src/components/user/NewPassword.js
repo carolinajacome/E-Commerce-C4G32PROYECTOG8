@@ -48,10 +48,10 @@ const NewPassword = ({ history, match }) => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mb-3">New Password</h1>
+                        <h1 className="mb-3">Nueva contraseña</h1>
 
                         <div className="form-group">
-                            <label htmlFor="password_field">Password</label>
+                            <label htmlFor="password_field">Contraseña</label>
                             <input
                                 type="password"
                                 id="password_field"
@@ -62,7 +62,7 @@ const NewPassword = ({ history, match }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="confirm_password_field">Confirm Password</label>
+                            <label htmlFor="confirm_password_field">Confirmar contraseña</label>
                             <input
                                 type="password"
                                 id="confirm_password_field"
@@ -76,7 +76,7 @@ const NewPassword = ({ history, match }) => {
                             id="new_password_button"
                             type="submit"
                             className="btn btn-block py-3">
-                            Set Password
+                            Configurar la contraseña
                         </button>
 
                     </form>

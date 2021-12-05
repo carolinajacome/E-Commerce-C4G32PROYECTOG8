@@ -76,10 +76,10 @@ const Register = ({ history }) => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-3">Register</h1>
+                        <h1 className="mb-3 text-center">Registro</h1>
 
                         <div className="form-group">
-                            <label htmlFor="email_field">Name</label>
+                            <label htmlFor="email_field">Nombre</label>
                             <input
                                 type="name"
                                 id="name_field"
@@ -103,7 +103,7 @@ const Register = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="password_field">Password</label>
+                            <label htmlFor="password_field">Contraseña</label>
                             <input
                                 type="password"
                                 id="password_field"
@@ -136,7 +136,7 @@ const Register = ({ history }) => {
                                         onChange={onChange}
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
-                                        Choose Avatar
+                                        Elige un Avatar
                                     </label>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ const Register = ({ history }) => {
                             className="btn btn-block py-3"
                             disabled={loading ? true : false}
                         >
-                            REGISTER
+                            REGISTRARSE
                         </button>
                     </form>
                 </div>

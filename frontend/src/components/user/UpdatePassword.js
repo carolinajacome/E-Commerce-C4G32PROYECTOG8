@@ -53,9 +53,9 @@ const UpdatePassword = ({ history }) => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mt-2 mb-5">Update Password</h1>
+                        <h2 className="mt-2 mb-5 text-center">Cambiar contraseña</h2>
                         <div className="form-group">
-                            <label for="old_password_field">Old Password</label>
+                            <label for="old_password_field">Contraseña anterior</label>
                             <input
                                 type="password"
                                 id="old_password_field"
@@ -66,7 +66,7 @@ const UpdatePassword = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label for="new_password_field">New Password</label>
+                            <label for="new_password_field">Nueva contraseña</label>
                             <input
                                 type="password"
                                 id="new_password_field"
@@ -76,7 +76,7 @@ const UpdatePassword = ({ history }) => {
                             />
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Update Password</button>
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Actualizar contraseña</button>
                     </form>
                 </div>
             </div>
