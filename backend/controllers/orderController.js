@@ -4,7 +4,6 @@ const Product = require('../models/product');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 
-
 // Create a new order   =>  /api/v1/order/new
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     const {
@@ -32,10 +31,9 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        status: 'success',
         order
     })
-});
+})
 
 
 // Get single order   =>   /api/v1/order/:id
@@ -48,11 +46,9 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        status: 'success',
         order
     })
-});
-
+})
 
 // Get logged in user orders   =>   /api/v1/orders/me
 exports.myOrders = catchAsyncErrors(async (req, res, next) => {
@@ -60,10 +56,9 @@ exports.myOrders = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        status: 'success',
         orders
     })
-});
+})
 
 
 // Get all orders - ADMIN  =>   /api/v1/admin/orders/
@@ -78,12 +73,10 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        status: 'success',
         totalAmount,
         orders
     })
-});
-
+})
 
 // Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
@@ -104,23 +97,18 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        status: 'success',
     })
-});
+})
 
-
-// Update Stock 
 async function updateStock(id, quantity) {
     const product = await Product.findById(id);
 
     product.stock = product.stock - quantity;
 
     await product.save({ validateBeforeSave: false })
-
 }
 
-
-// Delete order - ADMIN   =>   /api/v1/admin/order/:id
+// Delete order   =>   /api/v1/admin/order/:id
 exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id)
 
@@ -131,8 +119,6 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
     await order.remove()
 
     res.status(200).json({
-        success: true,
-        status: 'success'
+        success: true
     })
-});
-
+})

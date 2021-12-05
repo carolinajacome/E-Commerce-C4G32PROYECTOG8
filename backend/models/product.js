@@ -1,48 +1,44 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'Name is required'],
+        required: [true, 'Please enter product name'],
         trim: true,
-        maxlength: [100, 'Product name cannont exceed 100 characters']
-    },
-    description: {
-        type: String,
-        required: [true, 'Description is required'],
-    },
-    stock: {
-        type: Number,
-        required: [true, 'Stock is required'],
-        maxlength: [5, 'Stock cannot exceed 5 characters'],
-        default: 0
+        maxLength: [100, 'Product name cannot exceed 100 characters']
     },
     price: {
         type: Number,
-        required: [true, 'Price is required'],
-        maxlength: [5, 'Product price must be less than 5 characters'],
-        default: 0.00
+        required: [true, 'Please enter product price'],
+        maxLength: [5, 'Product name cannot exceed 5 characters'],
+        default: 0.0
     },
-    rating: {
+    description: {
+        type: String,
+        required: [true, 'Please enter product description'],
+    },
+    ratings: {
         type: Number,
         default: 0
     },
-    images: [{
-        public_id: {
-            type: String,
-            required: [true, 'Image public_id is required']
-        },
-        url: {
-            type: String,
-            required: [true, 'Image url is required']
-        },
-    }],
+    images: [
+        {
+            public_id: {
+                type: String,
+                required: true
+            },
+            url: {
+                type: String,
+                required: true
+            },
+        }
+    ],
     category: {
         name: {
             type: String,
             required: [true, 'Category is required'],
             enum: {
-                values: ['man', 'woman'],
+                values: ['Man', 'Woman'],
                 message: 'Please select correct category for product'
             }
         },
@@ -50,44 +46,55 @@ const productSchema = new mongoose.Schema({
             type: String,
             required: [true, 'Subcategory is required'],
             enum: {
-                values: ['tshirt', 'jeans', 'shoes'],
+                values: ['Tshirt', 'Jeans', 'Shoes'],
                 message: 'Please select correct subcategory for product'
             }
         }
     },
     seller: {
         type: String,
-        required: [true, 'Seller is required']
+        required: [true, 'Please enter product seller']
+    },
+    stock: {
+        type: Number,
+        required: [true, 'Please enter product stock'],
+        maxLength: [5, 'Product name cannot exceed 5 characters'],
+        default: 0
     },
     numOfReviews: {
         type: Number,
         default: 0
     },
-    reviews: [{
-        name: {
-            type: String,
-            required: [true, 'Name is required']
-        },
-        rating: {
-            type: Number,
-            required: [true, 'Rating is required'],
-            min: [1, 'Rating must be greater than 1'],
-            max: [5, 'Rating must be less than 5']
-        },
-        comments: {
-            type: String,
-            required: [true, 'Comments is required']
+    reviews: [
+        {
+            user: {
+                type: mongoose.Schema.ObjectId,
+                ref: 'User',
+                required: true
+            },
+            name: {
+                type: String,
+                required: true
+            },
+            rating: {
+                type: Number,
+                required: true
+            },
+            comment: {
+                type: String,
+                required: true
+            }
         }
-    }],
+    ],
     user: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.ObjectId,
         ref: 'User',
-        required: [true, 'User is required']
+        required: true
     },
     createdAt: {
         type: Date,
         default: Date.now
     }
-});
+})
 
 module.exports = mongoose.model('Product', productSchema);

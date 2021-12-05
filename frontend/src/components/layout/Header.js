@@ -1,46 +1,42 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react'
+import { Route, Link } from 'react-router-dom'
 
-import logo from '../../logo.png';
+import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
+import { logout } from '../../actions/userActions'
 
+import Search from './Search'
+
+import '../../App.css'
 
 const Header = () => {
+    const alert = useAlert();
+    const dispatch = useDispatch();
 
+    const { user, loading } = useSelector(state => state.auth)
+    const { cartItems } = useSelector(state => state.cart)
 
+    const logoutHandler = () => {
+        dispatch(logout());
+        alert.success('Logged out successfully.')
+    }
 
-  const { cartItems } = useSelector(state => state.cart)
-  return (
-    <Fragment>
-      <nav className="navbar row">
-        <div className="col-12 col-md-3">
-          <div className="navbar-brand">
-            <img src={logo} className="logo" alt="logo" />
-          </div>
-        </div>
+    return (
+        <Fragment>
+            <nav className="navbar row">
+                <div className="col-12 col-md-3">
+                    <div className="navbar-brand">
+                        <Link to="/">
+                            <img src="/images/logo.png" className="logo" alt="logo" />
+                        </Link>
+                    </div>
+                </div>
 
-        <div className="col-12 col-md-6 mt-2 mt-md-0">
-          <div className="input-group">
-            <input
-              type="text"
-              id="search_field"
-              className="form-control"
-              placeholder="Search for products, brands and more"
-            />
-            <div className="input-group-append">
-              <button className="btn" id="search_btn" type="button">
-                <i className="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+                <div className="col-12 col-md-6 mt-2 mt-md-0">
+                    <Route render={({ history }) => <Search history={history} />} />
+                </div>
 
-        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-        <Link to="/cart" style={{ textDecoration: 'none' }} >
-          <button className="btn" id="login_btn">Login</button>
-          <span className="ml-3" id="cart">Cart</span>
-          <span className="ml-1" id="cart_count">{cartItems.length}</span>
-          </Link>
-
-          <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+                <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                     <Link to="/cart" style={{ textDecoration: 'none' }} >
                         <span id="cart" className="ml-3">Cart</span>
                         <span className="ml-1" id="cart_count">{cartItems.length}</span>
@@ -60,7 +56,7 @@ const Header = () => {
                                 <span>{user && user.name}</span>
                             </Link>
 
-          <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+                            <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
 
                                 {user && user.role === 'admin' && (
                                     <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
@@ -72,13 +68,17 @@ const Header = () => {
                                 </Link>
 
                             </div>
-                            </div>
-                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>}
-        </div>
-        
-      </nav>
-    </Fragment>
-  );
-};
 
-export default Header;
+
+                        </div>
+
+                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>}
+
+
+                </div>
+            </nav>
+        </Fragment>
+    )
+}
+
+export default Header
