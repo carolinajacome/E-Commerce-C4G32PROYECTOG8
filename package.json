@@ -1,5 +1,5 @@
 {
-  "name": "shopit",
+  "name": "j4jeans-ecommerce",
   "version": "1.0.0",
   "description": "full ecommerce site using mern",
   "main": "server.js",
@@ -9,7 +9,7 @@
     "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
     "seeder": "node backend/utils/seeder.js"
   },
-  "author": "Ghulam Abbas",
+  "author": "E8-G32-MISIONTIC2022-UTP",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

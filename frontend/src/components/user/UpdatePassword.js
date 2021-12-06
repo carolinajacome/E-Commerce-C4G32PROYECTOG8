@@ -25,7 +25,7 @@ const UpdatePassword = ({ history }) => {
         }
 
         if (isUpdated) {
-            alert.success('Password updated successfully')
+            alert.success('Contraseña actualizada correctamente')
 
             history.push('/me')
 

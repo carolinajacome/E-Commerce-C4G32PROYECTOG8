@@ -38,7 +38,7 @@ const ProductDetails = ({ match }) => {
         }
 
         if (success) {
-            alert.success('Reivew posted successfully')
+            alert.success('Reseña publicada correctamente')
             dispatch({ type: NEW_REVIEW_RESET })
         }
 
@@ -46,7 +46,7 @@ const ProductDetails = ({ match }) => {
 
     const addToCart = () => {
         dispatch(addItemToCart(match.params.id, quantity));
-        alert.success('Item Added to Cart')
+        alert.success('Artículo agregado al carrito')
     }
 
     const increaseQty = () => {
@@ -158,7 +158,7 @@ const ProductDetails = ({ match }) => {
 
                             <hr />
 
-                            <p>Estado: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'In Stock' : 'Out of Stock'}</span></p>
+                            <p>Estado: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'En Stock' : 'Sin Stock'}</span></p>
 
                             <hr />
 
@@ -171,7 +171,7 @@ const ProductDetails = ({ match }) => {
                                 Enviar tu reseña
                             </button>
                                 :
-                                <div className="alert alert-danger mt-5" type='alert'>Inicia sesión para publicar tu reseña.</div>
+                                <div className="alert alert-danger mt-5" type='alert'>Inicia sesión para publicar tu reseña</div>
                             }
 
 

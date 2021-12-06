@@ -71,13 +71,13 @@ const ProcessOrder = ({ match }) => {
                                     <h4 className="mb-4">Datos de envío</h4>
                                     <p><b>Nombre:</b> {user && user.name}</p>
                                     <p><b>Teléfono:</b> {shippingInfo && shippingInfo.phoneNo}</p>
-                                    <p className="mb-4"><b>Address:</b>{shippingDetails}</p>
+                                    <p className="mb-4"><b>Dirección:</b> {shippingDetails}</p>
                                     <p><b>Cantidad:</b> ${totalPrice}</p>
 
                                     <hr />
 
                                     <h4 className="my-4">Pago</h4>
-                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAID" : "NOT PAID"}</b></p>
+                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Pago" : "Sin pagar"}</b></p>
 
                                     <h4 className="my-4">Stripe ID</h4>
                                     <p><b>{paymentInfo && paymentInfo.id}</b></p>

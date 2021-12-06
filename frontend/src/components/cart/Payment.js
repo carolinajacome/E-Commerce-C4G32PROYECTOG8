@@ -110,7 +110,7 @@ const Payment = ({ history }) => {
 
                     history.push('/success')
                 } else {
-                    alert.error('There is some issue while payment processing')
+                    alert.error('Hay algún problema durante el procesamiento del pago')
                 }
             }
 
@@ -167,7 +167,7 @@ const Payment = ({ history }) => {
                             type="submit"
                             className="btn btn-block py-3"
                         >
-                            Pay {` - ${orderInfo && orderInfo.totalPrice}`}
+                            Pagar {`  ${orderInfo && orderInfo.totalPrice}`}
                         </button>
 
                     </form>
