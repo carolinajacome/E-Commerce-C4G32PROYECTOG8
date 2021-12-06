@@ -21,14 +21,19 @@ const NewProduct = ({ history }) => {
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
+        'Selecciona una...',
         'Man',
         'Woman',
     ]
 
     const subcategories = [
+        'Selecciona una...',
         'Tshirt',
+        'Shirt',
         'Jeans',
-        'Shoes'
+        'Shoes',
+        'Socks',
+        'Polos'
     ]
 
     const alert = useAlert();

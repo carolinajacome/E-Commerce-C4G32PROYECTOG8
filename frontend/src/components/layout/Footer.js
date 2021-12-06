@@ -25,7 +25,7 @@ const Footer = () => {
                 <MDBRow>
                     <MDBCol lg='3' md='12' className='mb-4 mb-md-0'>
                         <h5 className='text-uppercase'>JFOURJEANS</h5>
-                        <img src={j4jeans} className="w-100 img-max mb-3" />
+                        <img src={j4jeans} className="w-100 img-max mb-3" alt="logo"/>
                     </MDBCol>
 
                     <MDBCol lg='3' md='4' className='mb-4 mb-md-0'>
@@ -111,17 +111,17 @@ const Footer = () => {
 
                         <ul className='list-unstyled mb-0 mt-3'>
                             <li>
-                                <a target="_blank" href='http://Facebook.com/jfourjeans' className='text-white'>
+                                <a target="_blank" rel="noreferrer" href='http://Facebook.com/jfourjeans' className='text-white'>
                                     <i className="fa fa-facebook fa-2x hover-fb"></i>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href='http://Twitter.com/jfourjeans' className='text-white'>
+                                <a target="_blank" rel="noreferrer" href='http://Twitter.com/jfourjeans' className='text-white'>
                                     <i className="fa fa-twitter fa-2x mt-2 hover-tw"></i>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href='http://Instagram.com/jfourjeans' className='text-white'>
+                                <a target="_blank" rel="noreferrer" href='http://Instagram.com/jfourjeans' className='text-white'>
                                     <i className="fa fa-instagram fa-2x mt-2 hover-ins"></i>
                                 </a>
                             </li>

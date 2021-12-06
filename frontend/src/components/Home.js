@@ -29,8 +29,11 @@ const Home = ({ match }) => {
 
     const subcategories = [
         'Tshirt',
+        'Shirt',
         'Jeans',
-        'Shoes'
+        'Shoes',
+        'Socks',
+        'Polos'
     ]
 
     const alert = useAlert();
@@ -64,7 +67,7 @@ const Home = ({ match }) => {
                 <Fragment>
                     <MetaData title={"Home"} />
 
-                    <h1 id="products_heading">Latest Products</h1>
+                    <h1 id="products_heading">Últimos Productos</h1>
 
                     <section id="products" className="container mt-5">
                         <div className="row">
@@ -193,10 +196,10 @@ const Home = ({ match }) => {
                                 itemsCountPerPage={resPerPage}
                                 totalItemsCount={productsCount}
                                 onChange={setCurrentPageNo}
-                                nextPageText={'Next'}
-                                prevPageText={'Prev'}
-                                firstPageText={'First'}
-                                lastPageText={'Last'}
+                                nextPageText={'Siguiente'}
+                                prevPageText={'Anterior'}
+                                firstPageText={'Primera'}
+                                lastPageText={'Última'}
                                 itemClass="page-item"
                                 linkClass="page-link"
                             />

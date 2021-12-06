@@ -29,8 +29,11 @@ const UpdateProduct = ({ match, history }) => {
 
     const subcategories = [
         'Tshirt',
+        'Shirt',
         'Jeans',
-        'Shoes'
+        'Shoes',
+        'Socks',
+        'Polos'
     ]
 
     const alert = useAlert();
