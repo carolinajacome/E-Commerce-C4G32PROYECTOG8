@@ -120,6 +120,7 @@ nav {
 
 /* Footer */
 footer {
+  position: relative;
   background-color: #196b9c;
   margin-top: 8rem;
   color: white;
